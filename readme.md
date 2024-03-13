@@ -1,10 +1,10 @@
 ## 1. 목표와 기능
 ### 1.1 목표
-- 자동차 블로그 입니다.
+- 자동차 블로그
 ### 1.2 기능
 - 자동차 정보 교환
 - 자동차 뉴스 배포
-- 자동차 수리 정보 표시
+- 자동차 수리 정보 검
 ### 1.3 만든이
 <table>
 	<tr>
@@ -15,19 +15,14 @@
 ## 2. 개발 환경 및 배포 URL
 ### 2.1 개발 환경
 - Web Framework
-  - Django 3.x (Python 3.8)
-- 서비스 배포 환경
-  - Amazon Lightsail
-...중략...
+  - Visual Studio Code, Django
+
 ### 2.2 배포 URL
 - https://github.com/SungjaeS/auto_blog
-- 테스트용 계정
-  ```
-  id : 
-  pw : 
-  ```
+
 ### 2.3 URL 구조(모놀리식)
 - main
+- 
 | App       | URL                                        | Views Function    | HTML File Name                        | Note           |
 |-----------|--------------------------------------------|-------------------|---------------------------------------|----------------|
 | main      | '/'                                        | home              | main/home.html                        | 홈화면          |
