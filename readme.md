@@ -156,112 +156,186 @@
 
 ## 4. 프로젝트 구조와 개발 일정
 ### 4.1 프로젝트 구조
-- 해당 프로젝트에서 폴더 트리 잘 다듬어 사용하세요. 필요하다면 주석을 달아주세요.
-📦tutorial  
- ┣ 📂accounts  
- ┃ ┣ 📂migrations  
- ┃ ┣ 📂__pycache__  
- ┃ ┣ 📜admin.py  
- ┃ ┣ 📜apps.py  
- ┃ ┣ 📜forms.py  
- ┃ ┣ 📜models.py  
- ┃ ┣ 📜tests.py  
- ┃ ┣ 📜urls.py  
- ┃ ┣ 📜views.py  
- ┃ ┗ 📜__init__.py  
- ┣ 📂blog  
- ┃ ┣ 📂migrations  
- ┃ ┣ 📂__pycache__  
- ┃ ┣ 📜admin.py  
- ┃ ┣ 📜apps.py  
- ┃ ┣ 📜forms.py  
- ┃ ┣ 📜models.py  
- ┃ ┣ 📜tests.py  
- ┃ ┣ 📜urls.py  
- ┃ ┣ 📜views.py  
- ┃ ┗ 📜__init__.py  
- ┣ 📂board  
- ┃ ┣ 📂migrations  
- ┃ ┣ 📂__pycache__  
- ┃ ┣ 📜admin.py  
- ┃ ┣ 📜apps.py  
- ┃ ┣ 📜forms.py  
- ┃ ┣ 📜models.py  
- ┃ ┣ 📜tests.py  
- ┃ ┣ 📜urls.py  
- ┃ ┣ 📜views.py  
- ┃ ┗ 📜__init__.py  
- ┣ 📂main  
- ┃ ┣ 📂migrations  
- ┃ ┣ 📂__pycache__  
- ┃ ┣ 📜admin.py  
- ┃ ┣ 📜apps.py  
- ┃ ┣ 📜models.py  
- ┃ ┣ 📜tests.py  
- ┃ ┣ 📜urls.py  
- ┃ ┣ 📜views.py  
- ┃ ┗ 📜__init__.py  
- ┣ 📂media  
- ┃ ┣ 📂accounts  
- ┃ ┣ 📂blog  
- ┃ ┗ 📂board  
- ┣ 📂static  
- ┃ ┣ 📂assets  
- ┃ ┃ ┣ 📂css  
- ┃ ┃ ┃ ┣ 📂apps  
- ┃ ┃ ┃ ┣ 📂authentication  
- ┃ ┃ ┃ ┣ 📂components  
- ┃ ┃ ┃ ┣ 📂dashboard  
- ┃ ┃ ┃ ┣ 📂elements  
- ┃ ┃ ┃ ┣ 📂forms  
- ┃ ┃ ┃ ┣ 📂pages  
- ┃ ┃ ┃ ┣ 📂tables  
- ┃ ┃ ┃ ┣ 📂users  
- ┃ ┃ ┣ 📂images  
- ┃ ┃ ┃ ┣ 📂mockup_image  
- ┃ ┃ ┣ 📂img  
- ┃ ┃ ┗ 📂js  
- ┃ ┣ 📂bootstrap  
- ┃ ┃ ┣ 📂css  
- ┃ ┃ ┗ 📂js  
- ┃ ┗ 📂plugins  
- ┣ 📂tech_blog  
- ┃ ┣ 📂__pycache__  
- ┃ ┣ 📜.env  
- ┃ ┣ 📜asgi.py  
- ┃ ┣ 📜settings.py  
- ┃ ┣ 📜urls.py  
- ┃ ┣ 📜wsgi.py  
- ┃ ┗ 📜__init__.py  
- ┣ 📂templates  
- ┃ ┣ 📂accounts  
- ┃ ┃ ┣ 📜login.html  
- ┃ ┃ ┣ 📜password_change.html  
- ┃ ┃ ┣ 📜profile.html  
- ┃ ┃ ┣ 📜profile_edit.html  
- ┃ ┃ ┣ 📜signup.html  
- ┃ ┃ ┗ 📜user_list.html  
- ┃ ┣ 📂blog  
- ┃ ┃ ┣ 📜blog_base.html  
- ┃ ┃ ┣ 📜post_detail.html  
- ┃ ┃ ┣ 📜post_form.html  
- ┃ ┃ ┣ 📜post_list.html  
- ┃ ┃ ┗ 📜post_not_found.html  
- ┃ ┣ 📂board  
- ┃ ┃ ┣ 📜board_base.html  
- ┃ ┃ ┣ 📜board_post_detail.html  
- ┃ ┃ ┣ 📜board_post_form.html  
- ┃ ┃ ┗ 📜board_post_list.html  
- ┃ ┣ 📂main  
- ┃ ┃ ┗ 📜index.html  
- ┃ ┣ 📜404.html  
- ┃ ┗ 📜base.html  
- ┣ 📜CONVENTION.md  
- ┣ 📜db.sqlite3  
- ┣ 📜manage.py  
- ┣ 📜README.md  
- ┗ 📜requirements.txt  
 
+```
+auto_blog
+├─ .git
+│  ├─ COMMIT_EDITMSG
+│  ├─ config
+│  ├─ description
+│  ├─ HEAD
+│  ├─ hooks
+│  │  ├─ applypatch-msg.sample
+│  │  ├─ commit-msg.sample
+│  │  ├─ fsmonitor-watchman.sample
+│  │  ├─ post-update.sample
+│  │  ├─ pre-applypatch.sample
+│  │  ├─ pre-commit.sample
+│  │  ├─ pre-merge-commit.sample
+│  │  ├─ pre-push.sample
+│  │  ├─ pre-rebase.sample
+│  │  ├─ pre-receive.sample
+│  │  ├─ prepare-commit-msg.sample
+│  │  ├─ push-to-checkout.sample
+│  │  ├─ sendemail-validate.sample
+│  │  └─ update.sample
+│  ├─ index
+│  ├─ info
+│  │  └─ exclude
+│  ├─ logs
+│  │  ├─ HEAD
+│  │  └─ refs
+│  │     ├─ heads
+│  │     │  └─ main
+│  │     └─ remotes
+│  │        └─ origin
+│  │           ├─ HEAD
+│  │           └─ main
+│  ├─ objects
+│  │  ├─ 00
+│  │  │  └─ 007f6ec2c74f1945c556c146d1ee26d30be194
+│  │  ├─ 02
+│  │  │  ├─ 59067e90052cae366f30868ae31c428b14513e
+│  │  │  └─ 9ff01754adedcccb9ad189c1a7380e7455352f
+│  │  ├─ 08
+│  │  │  └─ 23328a862d0622930ba825aa26c4696acfde52
+│  │  ├─ 12
+│  │  │  └─ fc027f92bf57a22efe7d5a0a66855f9775bb80
+│  │  ├─ 32
+│  │  │  └─ ea552e04466ecddc18ffc2f5f1433d82c22aa8
+│  │  ├─ 39
+│  │  │  └─ 149a0f811b33f196518b2375abfabba7af5421
+│  │  ├─ 3c
+│  │  │  └─ 4ea86dc6c070c9887c5ad66ba8083b9bdedafa
+│  │  ├─ 3e
+│  │  │  └─ 3c76595bcab116bb99a1722e542e07cdd23c71
+│  │  ├─ 40
+│  │  │  └─ 985e14c455808ba401d83291b6ef0a680c9f13
+│  │  ├─ 44
+│  │  │  └─ 6d62a6293c02a0ae6487e45a67c665b13da7e0
+│  │  ├─ 45
+│  │  │  └─ 493ca5a8fdeca1ea58155b6ccef738cb3a813f
+│  │  ├─ 4a
+│  │  │  └─ 5a06ca0ec4eb2ac834e1f54efc9ae46f0af8d1
+│  │  ├─ 5f
+│  │  │  └─ 3419efd8f262d56fe2305b120bd392e870508b
+│  │  ├─ 64
+│  │  │  └─ 5e0559a551f811e83d1b72a874117202eaa045
+│  │  ├─ 6c
+│  │  │  └─ f8ff5e046a541c413be56fd530c0aec6b5aa74
+│  │  ├─ 6d
+│  │  │  └─ 79226d50cb26b5f994db18e10bab5293839df1
+│  │  ├─ 71
+│  │  │  └─ a836239075aa6e6e4ecb700e9c42c95c022d91
+│  │  ├─ 7c
+│  │  │  └─ e503c2dd97ba78597f6ff6e4393132753573f6
+│  │  ├─ 7f
+│  │  │  └─ 711e023a30afd9111b8593e9c7f101f2004a17
+│  │  ├─ 84
+│  │  │  └─ 91820d783178d5f1ee97e8aa685fcc736d471c
+│  │  ├─ 8c
+│  │  │  └─ 38f3f3dad51e4585f3984282c2a4bec5349c1e
+│  │  ├─ 8e
+│  │  │  ├─ 7ac79b9576cb38f460147ec7f3ade64a100c62
+│  │  │  └─ b45ae89fb5a9373c2d9d1e68353a15798371d6
+│  │  ├─ 94
+│  │  │  └─ bfabacc09ee5c3cb8eb82f045459a1823838a3
+│  │  ├─ 98
+│  │  │  └─ 21cdfd100c2395678bac03b8aaa3b91ca9c15a
+│  │  ├─ 99
+│  │  │  └─ 77a448d2df0f7eaf9bcefb17a9cae8dabe9ddc
+│  │  ├─ 9d
+│  │  │  ├─ 1dcfdaf1a6857c5f83dc27019c7600e1ffaff8
+│  │  │  └─ 7e5b27bd07127ddf4da26046a75ab04aca507e
+│  │  ├─ 9f
+│  │  │  └─ c5cae07ba22fda6cae0695a8ed84651cb1d59d
+│  │  ├─ a4
+│  │  │  └─ faeec455f86ed4dbef036eddc5b83246c21c89
+│  │  ├─ b4
+│  │  │  └─ 0f1e9c9265c9969402c51f8c64a5429d0922bc
+│  │  ├─ b7
+│  │  │  └─ 7bfd65216423700464c4f42c392e3ec43b262c
+│  │  ├─ c0
+│  │  │  └─ a96315dac6dbdbb1f41f9d71839395180e59cb
+│  │  ├─ c7
+│  │  │  └─ 56bc48f1291f5159f1f5b75bc107d92e0ec82c
+│  │  ├─ ca
+│  │  │  └─ 9e27cb4a596ed2b76c9ba0117d72370e640116
+│  │  ├─ d2
+│  │  │  └─ 835754313e5c48eeecb1835e58a56b77ced5d1
+│  │  ├─ dd
+│  │  │  └─ 18877c7ab2b406ad1a68b9b72706006e5b8844
+│  │  ├─ e6
+│  │  │  └─ 9de29bb2d1d6434b8b29ae775ad8c2e48c5391
+│  │  ├─ ea
+│  │  │  └─ 457b46d089118b75f83f6199767ee9459f14bb
+│  │  ├─ f7
+│  │  │  └─ 752b649cc0bd012fbd5e8173a8f89734f4e5b0
+│  │  ├─ f9
+│  │  │  └─ 29dfa73bdcbf6ae8fa0d8dcfb8791eafedf52f
+│  │  ├─ info
+│  │  └─ pack
+│  │     ├─ pack-de4f61e66dabe8929d1ac56cd1c02597140da987.idx
+│  │     ├─ pack-de4f61e66dabe8929d1ac56cd1c02597140da987.pack
+│  │     └─ pack-de4f61e66dabe8929d1ac56cd1c02597140da987.rev
+│  ├─ packed-refs
+│  └─ refs
+│     ├─ heads
+│     │  └─ main
+│     ├─ remotes
+│     │  └─ origin
+│     │     ├─ HEAD
+│     │     └─ main
+│     └─ tags
+├─ .gitignore
+├─ accounts
+│  ├─ admin.py
+│  ├─ apps.py
+│  ├─ migrations
+│  │  └─ __init__.py
+│  ├─ models.py
+│  ├─ tests.py
+│  ├─ urls.py
+│  ├─ views.py
+│  └─ __init__.py
+├─ config
+│  ├─ asgi.py
+│  ├─ settings.py
+│  ├─ urls.py
+│  ├─ wsgi.py
+│  └─ __init__.py
+├─ index.html
+├─ LICENSE.md
+├─ manage.py
+├─ readme.md
+├─ requirements.txt
+├─ static
+├─ templates
+│  ├─ accounts
+│  │  ├─ login.html
+│  │  ├─ profile.html
+│  │  └─ signup.html
+│  ├─ base.html
+│  └─ tube
+│     ├─ tube_create.html
+│     ├─ tube_detail.html
+│     ├─ tube_list.html
+│     └─ tube_update.html
+└─ tube
+   ├─ admin.py
+   ├─ apps.py
+   ├─ forms.py
+   ├─ migrations
+   │  ├─ 0001_initial.py
+   │  ├─ 0002_subscription.py
+   │  └─ __init__.py
+   ├─ models.py
+   ├─ tests.py
+   ├─ urls.py
+   ├─ views.py
+   └─ __init__.py
+
+```
 
 ### 4.1 개발 일정(Work Breakdown Structure)
 
