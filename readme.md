@@ -38,7 +38,7 @@
 ### 2.2 배포 URL
 - https://github.com/SungjaeS/auto_blog
 
-### 2.3 URL 구조(모놀리식)
+### 2.3 URL 구조
 - main
 
 | App       | URL                                        | Views Function    | HTML File Name                        | Note           |
@@ -56,7 +56,7 @@
 | accounts  | 'profile/'                                 | profile           | accounts/profile.html                 | 비밀번호변경기능 / <br>프로필 수정/ 닉네임추가 |
 
 
-- boardapp
+<!-- - boardapp
 
 | App       | URL                                        | Views Function    | HTML File Name                        | Note           |
 |-----------|--------------------------------------------|-------------------|---------------------------------------|----------------|
@@ -68,7 +68,7 @@
 | board     | 'board/<int:pk>/comment/'                  | comment_create    | boardapp/comment_form.html           | 댓글 작성 |
 | board     | 'board/<int:pk>/comment/<br><int:comment_pk>/edit/' | comment_edit | boardapp/comment_form.html           | 댓글 수정 |
 | board     | 'board/<int:pk>/comment/<br><int:comment_pk>/delete/' | comment_delete | boardapp/comment_<br>confirm_delete.html| 댓글 삭제 |
-
+ -->
 
 - blog
 
@@ -87,7 +87,7 @@
 | blog      | 'comment/<int:pk>/update/'                 | comment_update    | blog/comment_form.html                |댓글 업데이터 경로   |
 | blog      | 'comment/<int:pk>/delete/'                 | comment_delete    | blog/comment_<br>confirm_delete.html      |댓글 삭제 폼    |
 
-### 2.4 URL 구조(마이크로식)
+<!-- ### 2.4 URL 구조(마이크로식)
 
 * views의 이름과 views에 믹스인 한 것이 있으면 함께 언급하면 좋습니다.
 
@@ -142,13 +142,13 @@
 |/accounts/token/refresh|토큰갱신| |✔️| | | | |
 |/board|게시글 목록 <br> 게시글 생성|✔️<br><br>|<br>✔️| | | <br> ✔️| |
 |/board/{postid}|게시글 상세 <br> 게시글 수정 <br> 게시글 삭제|✔️<br><br><br>| |✔️|<br><br>✔️| <br> ✔️ <br> ✔️ | <br> ✔️ <br> ✔️
-<br>
+<br> -->
 
 ## 3. 요구사항 명세와 기능 명세
-- https://www.mindmeister.com/ 등을 사용하여 모델링 및 요구사항 명세를 시각화하면 좋습니다.
+<!-- - https://www.mindmeister.com/ 등을 사용하여 모델링 및 요구사항 명세를 시각화하면 좋습니다.
 - 이미지는 셈플 이미지입니다.
 <img src="map.png" width="100%">
-- 머메이드를 이용해 시각화 할 수 있습니다.
+- 머메이드를 이용해 시각화 할 수 있습니다. -->
 
 ```mermaid
     sequenceDiagram
