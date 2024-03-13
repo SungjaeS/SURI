@@ -4,24 +4,16 @@
 - 자동차 블로그 입니다.
 
 ### 1.2 기능
-- 자사 콘텐츠와 연계가 가능한 플랫폼
-- 이력 관리가 가능한 플랫폼(Github Open API 활용)
-- 역량별 레벨 관리 시스템 제공(Github Open API 활용, 스터디 그룹 결과물)
-- SW 관련 해커톤이나 워크숍, 세미나, 밋업 등이 자유롭게 공유될 수 있는 플랫폼
-- 타 플랫폼에서도 활용할 수 있는 API Set 제공
-- 각 언어별 로그인 없이 실습이 바로 가능한 환경(google colab의 경우 학생들 이름으로 가입되어 있으면 작동하지 않음)
+- 자동차 정보 교환
+- 자동차 뉴스 배포
+- 자동차 수리 정보 표시
 
-### 1.3 팀 구성
-- 실제 사진을 업로드 하시길 권합니다.
+### 1.3 만든이
 <table>
 	<tr>
-		<th>이호준</th>
-		<th>이호준</th>
-		<th>이호준</th>
+		<th>신성재</th>
 	</tr>
  	<tr>
-		<td><img src="my.jpg" width="100%"></td>
-		<td><img src="my.jpg" width="100%"></td>
 		<td><img src="my.jpg" width="100%"></td>
 	</tr>
 </table>
@@ -34,11 +26,11 @@
   - Amazon Lightsail
 ...중략...
 ### 2.2 배포 URL
-- https://www.studyin.co.kr/
+- https://github.com/SungjaeS/auto_blog
 - 테스트용 계정
   ```
-  id : test@test.test
-  pw : test11!!
+  id : 
+  pw : 
   ```
 
 ### 2.3 URL 구조(모놀리식)
