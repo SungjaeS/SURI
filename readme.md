@@ -366,6 +366,7 @@ gantt
 </table>
 ## 7. 데이터베이스 모델링(ERD)
 * 아래 ERD는 머메이드를 사용했습니다.
+
 ```mermaid
 erDiagram
     user ||--o{ post : write
@@ -416,11 +417,13 @@ erDiagram
       varchar name
     }
 ```
+
 * 아래 ERD는 [ERDCloud](https://www.erdcloud.com/)를 사용했습니다.
 <img src="erd.png" width="60%">
 * https://dbdiagram.io/home도 많이 사용합니다.
 ## 8. Architecture
 * 아래 Architecture 설계도는 ChatGPT에게 아키텍처를 설명하고 mermaid로 그려달라 요청한 것입니다.
+
 ```mermaid
 graph TD;
     CI[GitHub CI/CD] -->|Deploys| LS[AWS Lightsail];
@@ -440,6 +443,7 @@ graph TD;
     class LS,S3 aws;
     class CI ci;
 ```
+
 * 아래 Architecture 설계도는 PPT를 사용했습니다.
   
 ![image](./architecture.png)
