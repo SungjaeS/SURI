@@ -345,7 +345,7 @@ gantt
 
 ```mermaid
 erDiagram
-    user ||--o{ post : write
+    user ||--o{ blog : write
     user {
       integer id PK
       varchar username
@@ -355,9 +355,9 @@ erDiagram
       varchar ip_address
       datetime last_login
     }
-    post }|--|{ tag : contains
-    post ||--o| category : has
-    post {
+    blog }|--|{ tag : contains
+    blog ||--o| category : has
+    blog {
       integer id PK
       varchar title
       text content
@@ -371,7 +371,7 @@ erDiagram
       integer tags FK
       varchar category FK
     }
-    post ||--o{ comment : contains
+    blog ||--o{ comment : contains
     comment ||--o{ comment : contains
     comment {
       integer id PK
@@ -392,18 +392,103 @@ erDiagram
       integer id PK
       varchar name
     }
+
+    user ||--o{ community : create
+    user ||--o{ community : write
+    user ||--o{ freeboard : write
+    community }|--|{ tag : contains
+    community ||--o| category : has
+    community {
+      integer id PK
+      varchar title
+      text content
+      datetime created_at
+      datetime updated_at
+      varchar writer
+      integer user_id FK
+      integer hits
+      integer tags FK
+      varchar category FK
+    }
+    freeboard }|--|{ tag : contains
+    freeboard ||--o| category : has
+    freeboard {
+      integer id PK
+      varchar title
+      text content
+      datetime created_at
+      datetime updated_at
+      varchar writer
+      integer user_id FK
+      integer hits
+      integer tags FK
+      varchar category FK
+    }
+    community ||--o{ comment : contains
+    freeboard ||--o{ comment : contains
+    comment ||--o{ comment : contains
+    comment ||--o{ comment : contains
+    comment {
+      integer id PK
+      integer parent FK
+      text comment
+      comment comment_reply FK
+      datetime created_at
+      datetime updated_at
+    }
+    search ||--o| category : has
+    search }|--|{ tag : contains
+    search ||--o{ comment : contains
+    search ||--o{ user : write
+    search {
+      integer id PK
+      varchar keyword
+      integer user_id FK
+      datetime searched_at
+    }
+    news }|--|{ tag : contains
+    news ||--o{ comment : contains
+    news ||--o| category : has
+    news ||--o{ user : write
+    news {
+      integer id PK
+      varchar title
+      text content
+      datetime created_at
+      datetime updated_at
+      varchar writer
+      integer user_id FK
+      integer hits
+    }
+    user ||--o{ member_only_board : write
+    member_only_board }|--|{ tag : contains
+    member_only_board ||--o| category : has
+    member_only_board {
+      integer id PK
+      varchar title
+      text content
+      datetime created_at
+      datetime updated_at
+      varchar writer
+      integer user_id FK
+      integer hits
+      integer tags FK
+      varchar category FK
+    }
+    member_only_board ||--o{ comment : contains
+    member_only_board ||--o{ comment : contains
+    comment ||--o{ comment : contains
+    comment ||--o{ comment : contains
+    comment {
+      integer id PK
+      integer parent FK
+      text comment
+      comment comment_reply FK
+      datetime created_at
+      datetime updated_at
+    }
 ```
 
-```mermaid
-		stateDiagram-v2
-	    [*] --> 로그인
-	    로그인 --> 성공
-	    로그인 --> 실패
-	    실패 --> 아이디/비밀번호찾기
-	    아이디/비밀번호찾기 --> 로그인재시도
-	    로그인재시도 --> 성공
-	    성공 --> [*]
-```
 
 ```mermaid
 graph TD
