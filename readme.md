@@ -50,7 +50,7 @@
 
 | App       | URL                                        | Views Function    | HTML File Name                        | Note           |
 |-----------|--------------------------------------------|-------------------|---------------------------------------|----------------|
-| accounts  | 'register/'                                | register          | accounts/register.html                |회원가입         |
+| accounts  | 'signup/'                                  | signup            | accounts/signup.html                  |회원가입         |
 | accounts  | 'login/'                                   | login             | accounts/login.html                   |로그인           |
 | accounts  | 'logout/'                                  | logout            | accounts/logout.html                  |로그아웃         |
 | accounts  | 'profile/'                                 | profile           | accounts/profile.html                 | 비밀번호변경기능 / <br>프로필 수정/ 닉네임추가 |
@@ -70,7 +70,7 @@
 | board     | 'board/<int:pk>/comment/<br><int:comment_pk>/delete/' | comment_delete | boardapp/comment_<br>confirm_delete.html| 댓글 삭제 |
  -->
 
-- blog
+<!-- - blog
 
 
 | App       | URL                                        | Views Function    | HTML File Name                        | Note           |
@@ -85,7 +85,7 @@
 | blog      | 'post/<int:post_pk>/comment/<br><int:parent_pk>/' | reply_new    | blog/comment_form.html                | 대댓글 폼      |
 | blog      | 'post/<int:pk>/like/'                      | like_post         | blog/post.html                        |좋아요를 누르면 blog/post로 Redirect됨|
 | blog      | 'comment/<int:pk>/update/'                 | comment_update    | blog/comment_form.html                |댓글 업데이터 경로   |
-| blog      | 'comment/<int:pk>/delete/'                 | comment_delete    | blog/comment_<br>confirm_delete.html      |댓글 삭제 폼    |
+| blog      | 'comment/<int:pk>/delete/'                 | comment_delete    | blog/comment_<br>confirm_delete.html      |댓글 삭제 폼    | -->
 
 <!-- ### 2.4 URL 구조(마이크로식)
 
