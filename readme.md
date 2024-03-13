@@ -366,7 +366,6 @@ gantt
 </table>
 
 ## 7. 데이터베이스 모델링(ERD)
-* 아래 ERD는 머메이드를 사용했습니다.
 
 ```mermaid
 erDiagram
@@ -419,11 +418,16 @@ erDiagram
     }
 ```
 
-* 아래 ERD는 [ERDCloud](https://www.erdcloud.com/)를 사용했습니다.
-<img src="erd.png" width="60%">
-* https://dbdiagram.io/home도 많이 사용합니다.
-## 8. Architecture
-* 아래 Architecture 설계도는 ChatGPT에게 아키텍처를 설명하고 mermaid로 그려달라 요청한 것입니다.
+```mermaid
+		stateDiagram-v2
+	    [*] --> 로그인
+	    로그인 --> 성공
+	    로그인 --> 실패
+	    실패 --> 아이디/비밀번호찾기
+	    아이디/비밀번호찾기 --> 로그인재시도
+	    로그인재시도 --> 성공
+	    성공 --> [*]
+```
 
 ```mermaid
 graph TD;
@@ -444,11 +448,6 @@ graph TD;
     class LS,S3 aws;
     class CI ci;
 ```
-
-* 아래 Architecture 설계도는 PPT를 사용했습니다.
-  
-![image](./architecture.png)
-- PPT로 간단하게 작성하였으나, 아키텍쳐가 커지거나, 상세한 내용이 필요할 경우 [AWS architecture Tool](https://online.visual-paradigm.com/ko/diagrams/features/aws-architecture-diagram-tool/)을 사용하기도 합니다.
 
 ## 9. Multimodal AI 기반 자동차 블로그, 정보, 커뮤니티 웹사이트 메인 기능
 
@@ -501,31 +500,6 @@ graph TD;
 
 **이 웹사이트는 자동차 애호가, 전문가, 일반 사용자 모두에게 유용한 정보, 커뮤니티 공간을 제공하여 자동차에 대한 관심과 지식을 높일 수 있도록 기여할 것입니다.**
 
-
-```mermaid
-		graph TD
-	    A[하루 시작] -->|일어난다| B(세수한다)
-	    B --> C{오늘은 무엇을 할까}
-	    C -->|밥을 먹는다| D[냉장고 확인]
-	    C -->|다시 잔다| E[침대로 돌아가기]
-	    C -->|티비를 본다| F[거실로 가기]
-```
-```mermaid
-		sequenceDiagram
-	    A->>+B: B야 소금좀 건내줘
-	    B->>+A: 여기
-	    A-->>-B: 고마워
-```
-```mermaid
-		stateDiagram-v2
-	    [*] --> 로그인
-	    로그인 --> 성공
-	    로그인 --> 실패
-	    실패 --> 아이디/비밀번호찾기
-	    아이디/비밀번호찾기 --> 로그인재시도
-	    로그인재시도 --> 성공
-	    성공 --> [*]
-```
 ## 10. 에러와 에러 해결
 - 
 ## 11. 개발하며 느낀점
