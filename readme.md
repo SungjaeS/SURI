@@ -294,11 +294,11 @@ gantt
 ## 6. 와이어프레임 / UI / BM
 
 ### 6.1 와이어프레임
-- 아래 페이지별 상세 설명, 더 큰 이미지로 하나하나씩 설명 필요
+<!-- - 아래 페이지별 상세 설명, 더 큰 이미지로 하나하나씩 설명 필요
 <img src="ui.png" width="60%">
 - 와이어 프레임은 디자인을 할 수 있다면 '피그마'를, 디자인을 할 수 없다면 '카카오 오븐'으로 쉽게 만들 수 있습니다.
 ### 6.2 화면 설계
-- 화면은 gif파일로 업로드해주세요.
+- 화면은 gif파일로 업로드해주세요. -->
  
 <table>
     <tbody>
@@ -308,10 +308,10 @@ gantt
         </tr>
         <tr>
             <td>
-		<img src="ui1.png" width="100%">
+		<img src="image/main.png" width="100%">
             </td>
             <td>
-                <img src="ui2.png" width="100%">
+                <img src="image/login.png" width="100%">
             </td>
         </tr>
         <tr>
@@ -328,14 +328,14 @@ gantt
         </tr>
         <tr>
             <td>검색</td>
-            <td>번역</td>
+            <td>제조사</td>
         </tr>
         <tr>
             <td>
-                <img src="ui3.png" width="100%">
+                <img src="image/AI.png" width="100%">
             </td>
             <td>
-                <img src="ui3.png" width="100%">
+                <img src="image/brand.png" width="100%">
             </td>
         </tr>
         <tr>
