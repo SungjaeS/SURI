@@ -153,20 +153,34 @@
 - 머메이드를 이용해 시각화 할 수 있습니다. -->
 
 ```mermaid
-    sequenceDiagram
-    actor A as client
-    participant B as Web
-    participant C as server
-    A->>+B: 로그인 요청
-    B->>+A: 로그인 정보 요구
-    A->>+C: id, pw 전달
-    alt 로그인 정보가 있고 로그인 정보가 맞을 시
-    C->>+B: access token, refresh token 전달
-    B->>+A: 로그인 성공
-    else 로그인 정보가 없거나 정보가 맞지 않을시
-    C->>+B: False
-    B->>+A: 로그인 실패
+sequenceDiagram
+    actor A as 클라이언트
+    participant B as 웹 인터페이스
+    participant C as 서버
+
+    A->>+B: 로그인 요청을 함 (로그인 페이지 열기)
+    Note over A,B: 클라이언트가 웹 인터페이스를 통해 로그인을 요청한다.
+
+    B->>+A: 로그인 정보 (아이디, 비밀번호) 요구
+    Note over B,A: 웹 인터페이스는 사용자에게 로그인 정보 입력을 요구한다.
+
+    A->>+C: 사용자 아이디와 비밀번호(id, pw) 전달
+    Note over A,C: 클라이언트는 입력 받은 로그인 정보를 서버로 전달한다.
+
+    alt 로그인 정보가 올바르고 계정이 존재할 시
+        C->>+B: 액세스 토큰(access token) 및 리프레시 토큰(refresh token) 전달
+        Note over C,B: 서버는 로그인이 성공했음을 알리고, 액세스 및 리프레시 토큰을 웹 인터페이스로 전달한다.
+
+        B->>+A: 로그인 성공 메시지와 함께 토큰 전달
+        Note over B,A: 웹 인터페이스는 클라이언트에게 로그인 성공 메시지와 토큰을 전달한다.
+    else 로그인 정보가 잘못되었거나 계정이 존재하지 않을 시
+        C->>+B: 로그인 실패(False)
+        Note over C,B: 서버는 로그인 실패 메시지를 웹 인터페이스로 전달한다.
+
+        B->>+A: 로그인 실패 메시지 전달
+        Note over B,A: 웹 인터페이스는 클라이언트에게 로그인 실패 메시지를 전달한다.
     end
+
 ```
 
 ## 4. 프로젝트 구조와 개발 일정
