@@ -469,29 +469,6 @@ erDiagram
 ```
 
 
-```mermaid
-graph TD
-A(GitHub CI/CD) --> B(Deploys) --> C(AWS Lightsail)
-D(Django Application) --> E(Uses) --> F(Django REST Framework)
-D --> G(Real-time communication) --> H(Django Channels)
-H --> I(Messaging backend) --> J(Redis)
-D --> K(Connects to) --> L(PostgreSQL)
-D --> M(Static & Media Files) --> N(AWS S3)
-O(Frontend) --> P(Deployed on) --> C
-C --> Q(Hosts) --> D
-C --> R(Hosts) --> O
-classDef framework fill:#f9f,stroke:#333,stroke-width:2px;
-classDef aws fill:#ff9,stroke:#f66,stroke-width:2px,stroke-dasharray: 5, 5;
-classDef ci fill:#9cf,stroke:#33f,stroke-width:2px;
-classDef db fill:#99f,stroke:#66f,stroke-width:2px;
-classDef storage fill:#f9f,stroke:#f66,stroke-width:2px;
-
-class A,F,H,J,L,N framework;
-class C,O aws;
-class B,E,G,I,K,M,P,Q,R db;
-class D storage;
-```
-
 ## 7. Multimodal AI 기반 자동차 블로그, 정보, 커뮤니티 웹사이트 메인 기능
 
 **웹사이트 소개:**
