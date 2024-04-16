@@ -1,4 +1,14 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
-def chat_view(request):
-    return render(request, 'chat/chat.html')
+
+def index(request):
+    return render(request, "main/index.html")
+
+def about(request):
+    return render(request, "main/about.html")
+
+def contact(request):
+    return render(request, "main/contact.html")
+
+def chat(request):
+    return render(request, "main/chat.html")

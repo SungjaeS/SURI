@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자동차 진단 및 수리</title>
+    <link rel="stylesheet" href="css/chat_style.css">
+
+</head>
+<body>
+    <div class="title-container">
+        <img src="image/my1.png" width="2%">
+        <h1>자동차 진단 및 수리 도우미</h1>
+    </div>
+    <main class="cont-main">
+        <form>
+            <p>자동차 브랜드</p>
+            <select name="car_model" required>
+                <option value="">자동차 브랜드 선택</option>
+                <option value="BENZ">BENZ</option>
+                <option value="BMW">BMW</option>
+                <option value="VW">VW</option> 
+                <!-- 다른 자동차 모델들 추가 -->
+            </select><br>
+        </form>
+            <p>원하시는 진단 및 수리 내용을 설명해주세요</p>
+            <textarea name="issue_description" rows="4" cols="150" required></textarea><br>
+            <input type="submit" value="진단 및 수리 시작"><br>
+        </form>
+        <br><div class="answer"></div>
+    </main>
+
+    <script>
+        const $form = document.querySelector('form')
+        const $input = document.querySelector('textarea')
+        const $button = document.querySelector('input')
+        const $answer = document.querySelector('.answer')
+
+
+        const data = [];
+        data.push({
+            "role": "system",
+            "content": "정비봇은 자동차 진단 및 수리 전문 도우미입니다."
+        })
+
+        const url = `https://open-api.jejucodingcamp.workers.dev/`
+        
+        $button.addEventListener('click', e => {
+            e.preventDefault()
+            const contents = $input.value
+            data.push({
+                "role": "user",
+                "content": contents
+            })
+            $input.value = ''
+
+            chatGPTAPI()
+        })
+
+        function chatGPTAPI() {
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data),
+                redirect: 'follow'
+            })
+            .then(res => res.json())
+            .then(res => {
+                console.log(res)
+                // 답변 온 것을 assistant로 저장
+                $answer.innerHTML = `<p>${res.choices[0].message.content}</p>`
+            })
+        }
+    </script>
+</body>
+</html>
